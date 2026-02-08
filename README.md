@@ -1,71 +1,68 @@
-# 🌐 Portfólio — Henrique Lopes
+# 🚀 Portfólio | Henrique Lopes
 
-Este repositório contém o código-fonte do meu **portfólio pessoal**, desenvolvido com **HTML e CSS**, onde apresento meu perfil acadêmico, projetos, tecnologias e certificações na área de **Tecnologia da Informação**.
+![GitHub repo size](https://img.shields.io/github/repo-size/HenriqueLopes741/portfolio?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/HenriqueLopes741/portfolio?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/HenriqueLopes741/portfolio?style=for-the-badge)
 
-O objetivo do portfólio é centralizar minhas informações profissionais e demonstrar, de forma clara e organizada, minhas habilidades técnicas e projetos práticos.
-
----
-
-## 👨‍💻 Sobre mim
-Sou estudante de **Ciência da Computação (IESB)** e **Análise e Desenvolvimento de Sistemas (Unicesumar)**, com interesse direcionado para **infraestrutura de TI, ambientes Linux, computação em nuvem e desenvolvimento backend**.
-
-Possuo uma abordagem prática de aprendizado, com experiência em projetos envolvendo **APIs REST, automação, integração entre sistemas e monitoramento de serviços em servidores**. Busco uma oportunidade de **estágio** para consolidar meus conhecimentos técnicos, aprender com profissionais da área e contribuir com soluções confiáveis e eficientes.
+> Portfólio pessoal desenvolvido para apresentar meus projetos e habilidades em **Infraestrutura, Linux, Cloud e Python**.
 
 ---
 
-## 🚀 Projetos em destaque
+## 🖼️ Preview
 
-### 🟩 Monitoramento de Servidor Minecraft
-Projeto de monitoramento de servidor Minecraft utilizando **Python e Flask**, com uma **API REST** que retorna informações como status, latência e jogadores online em tempo real.
+![Preview do Site](./preview.png) 
+*(Adicione uma captura de tela do seu site aqui, ou apague esta linha se não tiver)*
 
-**Tecnologias:** Python, Flask, Linux, API REST, HTML/CSS  
-🔗 Post no LinkedIn:  
-https://www.linkedin.com/posts/henriquelopesdioniziomuniz_aprendizado-tecnologia-python-activity-7406471404851720192-3UFg
+## 🌐 Demonstração Online
 
----
-
-### 🚀 Visão Computacional + Arduino
-Projeto que integra **visão computacional e hardware**, utilizando **Python, OpenCV e MediaPipe** para reconhecer gestos da mão pela câmera e controlar LEDs em um **Arduino** via comunicação serial.
-
-**Tecnologias:** Python, OpenCV, MediaPipe, Arduino, Comunicação Serial  
-🔗 Post no LinkedIn:  
-https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-arduino-opencv-activity-7414492326535892992-yPy7
+Acesse o projeto online aqui:  
+👉 **[Link para o Portfólio (GitHub Pages)](https://henriquelopes741.github.io/portfolio)** *(Substitua "portfolio" pelo nome do seu repositório se for diferente)*
 
 ---
 
-## 🛠 Tecnologias
-- Linux
-- Git & GitHub
-- Python
-- Flask
-- HTML
-- CSS
-- Oracle Cloud Infrastructure (OCI)
-- Arduino
+## 🛠️ Tecnologias Utilizadas
+
+O projeto foi construído utilizando tecnologias web modernas, sem dependência de frameworks pesados, garantindo alta performance.
+
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) **HTML5 Semântico**: Estrutura e acessibilidade.
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) **CSS3 Moderno**: Flexbox, Grid Layout, Variáveis CSS e Animações.
+* ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) **Vanilla JavaScript**: Manipulação do DOM e Canvas API.
 
 ---
 
-## 📜 Certificações e conhecimentos
-- Infraestrutura de Nuvem (OCI)
-- Fundamentos de Linux e Terminal
-- Git e GitHub para Versionamento
-- Lógica de Programação e Algoritmos
-- Python para Iniciantes
-- Noções de Backend, APIs e HTTP
-- Introdução a Banco de Dados (SQL)
-- Conceitos básicos de Docker
-- Noções de Segurança da Informação
+## ✨ Funcionalidades e Design
+
+Este não é apenas um site estático comum. Foram implementadas diversas features interativas:
+
+1.  **Glassmorphism UI**: Design moderno com efeito de "vidro fosco" nos cards e menus.
+2.  **Particle Network Animation**: Um fundo animado interativo criado com **HTML5 Canvas**, representando nós de rede e conexões (remetendo à infraestrutura).
+3.  **Typewriter Effect**: Efeito de digitação automática no cabeçalho para apresentar as skills dinamicamente.
+4.  **Scroll Reveal**: Animações suaves de entrada dos elementos conforme a rolagem da página.
+5.  **Responsividade Total**: O layout se adapta perfeitamente a desktops, tablets e smartphones.
 
 ---
 
-## 🌍 Acesso ao portfólio
-O portfólio está hospedado via **GitHub Pages**:
+## 📂 Projetos Destacados
 
-🔗 https://henriquelopes741.github.io/seu-repositorio/
+No portfólio, apresento detalhes dos meus principais projetos práticos:
+
+* **🤖 Bot de Automação Git**: Script Python para automatizar fluxo de versionamento.
+* **📂 Organizador de Arquivos**: Automação em Python para gerenciamento de diretórios.
+* **🟩 Monitor Minecraft**: Monitoramento de servidores com API Flask e Frontend.
+* **👁️ Visão Computacional**: Controle de hardware (Arduino) via gestos com OpenCV.
 
 ---
 
-## 📫 Contato
-- Email: **henrique.lopes.d.m@gmail.com**
-- LinkedIn: https://www.linkedin.com/in/henriquelopesdioniziomuniz/
-- GitHub: https://github.com/HenriqueLopes741
+## 🚀 Como rodar localmente
+
+Se você quiser clonar e modificar este projeto:
+
+```bash
+# Clone este repositório
+$ git clone [https://github.com/HenriqueLopes741/portfolio.git](https://github.com/HenriqueLopes741/portfolio.git)
+
+# Acesse a pasta do projeto
+$ cd portfolio
+
+# Abra o arquivo index.html no seu navegador
+# Dica: Se usar VS Code, use a extensão "Live Server" para uma melhor experiência.
