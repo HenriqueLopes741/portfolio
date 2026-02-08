@@ -1,235 +1,168 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio | Henrique Lopes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Henrique Lopes</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #e5e7eb; }
-
-    header {
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
-
-    header h1 { font-size: 2.6rem; }
-    header p { font-size: 1.1rem; opacity: .95; }
-
-    section {
-      max-width: 1100px;
-      margin: 70px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #60a5fa;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: #020617;
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-      transition: transform .3s;
-    }
-
-    .card:hover { transform: translateY(-6px); }
-
-    ul { list-style: none; margin-top: 15px; }
-    ul li { margin-bottom: 8px; }
-
-    .tag {
-      display: inline-block;
-      background: #1e40af;
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: .8rem;
-      margin: 6px 6px 0 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #020617;
-      font-size: .9rem;
-    }
-
-    a { color: #93c5fd; text-decoration: none; }
-    a.btn {
-      display: inline-block;
-      margin-top: 15px;
-      background: #2563eb;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Portfólio | Henrique Lopes - Infra & Cloud">
+    <meta property="og:description" content="Estudante de Ciência da Computação focado em Infraestrutura, Linux, Python e Automação. Confira meus projetos!">
+    <meta property="og:image" content="https://seusite.com/caminho-da-sua-foto-de-capa.png"> <meta property="og:url" content="https://henriquelopes741.github.io/portfolio"> <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"> ```
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2626/2626270.png">
 </head>
-
 <body>
 
-<header>
-  <img src="Design sem nome (4).png" alt="Foto de Henrique Lopes">
-  <h1>Henrique Lopes</h1>
-  <p>Estudante de Ciência da Computação | Infraestrutura • Linux • Cloud • Python</p>
-
-  <div style="margin-top:25px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-    <a class="btn" href="https://github.com/HenriqueLopes741" target="_blank">🐙 GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/henriquelopesdioniziomuniz/" target="_blank">💼 LinkedIn</a>
-  </div>
-</header>
-
-<section>
-  <h2>👤 Sobre mim</h2>
-  <div class="grid">
-    <div class="card">
-      <p>
-            Sou estudante de <strong>Ciência da Computação (IESB)</strong> e
-            <strong>Análise e Desenvolvimento de Sistemas (Unicesumar)</strong>,
-            com interesse direcionado para
-            <strong>infraestrutura de TI, ambientes Linux, computação em nuvem e desenvolvimento backend</strong>.
-            </p>
-
-            <p style="margin-top:12px;">
-            Possuo uma abordagem prática de aprendizado, com experiência em projetos envolvendo
-            <strong>APIs REST, automação, integração entre sistemas e monitoramento de serviços em servidores</strong>.
-            Busco uma oportunidade de <strong>estágio</strong> para consolidar meus conhecimentos técnicos,
-            aprender com profissionais da área e contribuir ativamente para o desenvolvimento de
-            soluções confiáveis e eficientes.
-      </p>
-
-      <ul>
-        <li><strong>Email:</strong> henrique.lopes.d.m@gmail.com</li>
-        <li><strong>Objetivo: </strong>Estágio na área de Tecnologia da Informação, atuando com desenvolvimento, infraestrutura, sistemas, automação e suporte tecnológico.</li>
-      </ul>
+    <canvas id="canvas-bg"></canvas>
+    <nav class="navbar">
+    <div class="nav-content">
+        <a href="#" class="logo">HL.</a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#certificados">Certificados</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
     </div>
-  </div>
-</section>
+</nav>
+    <header>
+        <div class="profile-container reveal">
+            <img src="Design sem nome (4).png" alt="Henrique Lopes" class="profile-img">
+        </div>
 
-<section>
-  <h2>🚀 Projetos</h2>
-  <div class="grid">
+        <h1 class="reveal">Henrique Lopes</h1>
+        
+        <div class="reveal type-container">
+            <span id="typing-text"></span><span class="cursor">|</span>
+        </div>
 
-    <div class="card">
-      <h3>🟩 Monitoramento de Servidor Minecraft</h3>
-      <p style="margin-top:10px;">
-        Sistema de <strong>monitoramento de servidor Minecraft</strong> com
-        <strong>API REST em Python (Flask)</strong> e
-        <strong>interface web</strong> exibindo informações em tempo real.
-      </p>
+        <div class="social-links reveal">
+            <a href="https://www.linkedin.com/in/henriquelopesdioniziomuniz/" target="_blank" class="btn btn-primary">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/HenriqueLopes741" target="_blank" class="btn btn-outline">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:henrique.lopes.d.m@gmail.com" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="curriculo_Henrique (1).pdf" download="Curriculo_Henrique_Lopes.pdf" class="btn btn-primary">
+    <i class="fas fa-download"></i> Baixar CV
+</a>
+        </div>
+    </header>
 
-      <ul>
-        <li>✔ API retornando status, latência e jogadores online</li>
-        <li>✔ Backend em Python rodando em servidor Linux</li>
-        <li>✔ Consumo da API via HTTP no frontend</li>
-        <li>✔ Testes, deploy e manutenção via terminal</li>
-        <li><a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_aprendizado-tecnologia-python-activity-7406471404851720192-3UFg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank">🔗 Link do projeto no Linkedin</a></li>
-      </ul>
+    <main>
+        <section id="sobre">
+            <h2 class="section-title reveal"><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
+            <div class="card reveal">
+                <p>
+                    Estudante de Ciência da Computação com foco em desenvolvimento web e backend. Possuo
+                    experiência prática com Python (Flask), criação de scripts de automação, APIs REST, JavaScript,
+                    HTML5, CSS3 e versionamento com Git/GitHub. Vivência com Linux e fundamentos de cloud
+                    computing na Oracle Cloud Infrastructure (OCI). Busco oportunidade de estágio para aplicar
+                    conhecimentos técnicos, aprender com o time e evoluir profissionalmente na área de tecnologia
+                </p>
+                <ul class="tech-list">
+                    <li><i class="fas fa-check-circle"></i> Foco em Infraestrutura, Cloud & Python</li>
+                    <li><i class="fas fa-check-circle"></i> Aprendizado prático (Hands-on)</li>
+                    <li><i class="fas fa-check-circle"></i> Automação de processos, Scripts e APIs</li>
+                </ul>
+            </div>
+        </section>
 
-      <div>
-        <span class="tag">Python</span>
-        <span class="tag">Flask</span>
-        <span class="tag">Linux</span>
-        <span class="tag">API REST</span>
-        <span class="tag">HTML/CSS</span>
-      </div>
-    </div>
+        <section id="projetos">
+            <h2 class="section-title reveal"><i class="fas fa-code-branch"></i> Projetos</h2>
+            <div class="grid">
+                
+                <div class="card project-card reveal">
+                    <h3><i class="fas fa-folder-open"></i> Organizador de Arquivos</h3>
+                    <p>Script Python que monitora e organiza automaticamente a pasta Downloads, separando arquivos por extensão (PDF, Imagens, Vídeos).</p>
+                    <div class="tags">
+                        <span>Python</span><span>Automação</span><span>OS</span><span>Scripting</span>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_projeto-em-python-finalizado-desenvolvi-activity-7425311362387525633-Jkoz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-    <div class="card">
-      <h3>🚀 Visão Computacional + Arduino</h3>
-      <p style="margin-top:10px;">
-        Projeto que integra <strong>visão computacional e hardware</strong>,
-        utilizando a câmera para reconhecer gestos da mão e
-        controlar LEDs em um Arduino em tempo real.
-      </p>
+                <div class="card project-card reveal">
+                    <h3><i class="fas fa-terminal"></i> Bot Automação Git</h3>
+                    <p>Ferramenta CLI em Python para automatizar o fluxo de versionamento (status, add, commit, push) diretamente pelo terminal.</p>
+                    <div class="tags">
+                        <span>Python</span><span>Git</span><span>CLI</span><span>Automação</span>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-git-github-activity-7424119046314323969-2OKz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-      <ul>
-        <li>✔ Reconhecimento de dedos com OpenCV e MediaPipe</li>
-        <li>✔ Comunicação serial entre Python e Arduino</li>
-        <li>✔ Controle de 5 LEDs conforme número de dedos levantados</li>
-        <li>✔ Organização do código e lógica modular</li>
-        <li><a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-arduino-opencv-activity-7414492326535892992-yPy7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank">🔗 Link do projeto no Linkedin</a></li>
-      </ul>
+                <div class="card project-card reveal">
+                    <h3><i class="fas fa-cube"></i> Monitor Minecraft</h3>
+                    <p>Sistema de monitoramento de servidor com API REST (Flask) e interface web exibindo status e jogadores em tempo real.</p>
+                    <div class="tags">
+                        <span>Python</span><span>Flask</span><span>Linux</span><span>API REST</span>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_aprendizado-tecnologia-python-activity-7406471404851720192-3UFg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-      <div>
-        <span class="tag">Python</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">MediaPipe</span>
-        <span class="tag">Arduino</span>
-        <span class="tag">Serial</span>
-      </div>
-    </div>
+                <div class="card project-card reveal">
+                    <h3><i class="fas fa-robot"></i> Visão Computacional</h3>
+                    <p>Controle de hardware via gestos manuais utilizando a câmera, Python (OpenCV) e comunicação serial com Arduino.</p>
+                    <div class="tags">
+                        <span>OpenCV</span><span>Arduino</span><span>Serial</span><span>Python</span>
+                    </div>
+                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-arduino-opencv-activity-7414492326535892992-yPy7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-  </div>
-</section>
+            </div>
+        </section>
 
-<section>
-  <h2>📜 Certificados</h2>
-  <div class="grid">
-    <div class="card">
-      <ul>
-            <li>✔ Infraestrutura de Nuvem da OCI (Oracle Cloud Infrastructure)</li>
-            <li>✔ Lógica de Programação</li>
-            <li>✔ Fundamentos de Algoritmos</li>
-            <li>✔ Fundamentos de Linux e Terminal</li>
-            <li>✔ Git e GitHub para Versionamento</li>
-            <li>✔ Introdução à Computação em Nuvem</li>
-            <li>✔ Noções de Backend</li>
-            <li>✔ Python para Iniciantes</li>
-            <li>✔ Programação Orientada a Objetos (conceitos básicos)</li>
-            <li>✔ Introdução a Banco de Dados (SQL)</li>
-            <li>✔ Noções de APIs e HTTP</li>
-            <li>✔ Estrutura de Projetos e Boas Práticas</li>
-            <li>✔ Introdução ao Docker</li>
-            <li>✔ Conceitos Básicos de Segurança da Informação</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <section id="certificados">
+            <h2 class="section-title reveal"><i class="fas fa-certificate"></i> Certificações</h2>
+            <div class="card reveal">
+                <ul class="cert-list">
+                    <li><i class="fas fa-cloud"></i> Oracle Cloud Infrastructure (OCI)</li>
+                    <li><i class="fab fa-linux"></i> Fundamentos de Linux e Terminal</li>
+                    <li><i class="fab fa-git-alt"></i> Git e GitHub Versionamento</li>
+                    <li><i class="fab fa-docker"></i> Introdução ao Docker</li>
+                    <li><i class="fas fa-shield-alt"></i> Segurança da Informação Básica</li>
+                    <li><i class="fab fa-python"></i> Python para Iniciantes</li>
+                    <li><i class="fas fa-database"></i> Introdução a Banco de Dados (SQL)</li>
+                    <li><i class="fas fa-network-wired"></i> Noções de APIs e HTTP</li>
+                    <li><i class="fas fa-code"></i> Lógica e Algoritmos</li>
+                </ul>
+            </div>
+        </section>
 
-<section>
-  <h2>🛠 Tecnologias</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="tag">Linux</span>
-      <span class="tag">Git & GitHub</span>
-      <span class="tag">Python</span>
-      <span class="tag">Flask</span>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">Cloud (OCI)</span>
-      <span class="tag">Arduino</span>
-    </div>
-  </div>
-</section>
+        <section id="skills">
+            <h2 class="section-title reveal"><i class="fas fa-tools"></i> Tecnologias</h2>
+            <div class="card reveal">
+                <div class="tags big-tags">
+                    <span>Linux</span>
+                    <span>Python</span>
+                    <span>Git</span>
+                    <span>Docker</span>
+                    <span>SQL</span>
+                    <span>Cloud (OCI)</span>
+                    <span>Flask</span>
+                    <span>Bash Script</span>
+                    <span>OpenCV</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-  © 2025 — Henrique Lopes • Portfólio hospedado no GitHub Pages
+    <footer>
+    <p style="font-family: 'Fira Code', monospace;">
+        <span style="color: var(--primary)">root@henrique:~$</span> 
+        echo "Feito com 💙 e muito café."
+    </p>
+    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">
+        &copy; 2026 Henrique Lopes
+    </p>
 </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

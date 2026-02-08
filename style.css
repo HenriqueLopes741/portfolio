@@ -1,0 +1,259 @@
+:root {
+    --bg-color: #0b1120;
+    --card-bg: rgba(30, 41, 59, 0.6);
+    --primary: #38bdf8; /* Azul Sky */
+    --secondary: #818cf8; /* Roxo Indigo */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --font-main: 'Poppins', sans-serif;
+    --font-code: 'Fira Code', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Canvas de Fundo */
+#canvas-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Header */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+    transition: transform 0.3s ease;
+}
+.profile-img:hover { transform: scale(1.05); }
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.type-container {
+    font-family: var(--font-code);
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    min-height: 25px;
+}
+
+.cursor { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Botões */
+.social-links { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+.btn {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #0b1120;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn:hover { transform: translateY(-3px); }
+.btn-outline:hover { background: rgba(56, 189, 248, 0.1); }
+
+/* Seções Gerais */
+section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+}
+.section-title::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--secondary), transparent);
+    margin-left: 15px;
+}
+.section-title i { color: var(--primary); }
+
+/* Cards Glassmorphism */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 16px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Listas e Tags */
+.tech-list { list-style: none; }
+.tech-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.tech-list i { color: var(--secondary); font-size: 0.9rem; }
+
+/* Estilo novo para a lista de certificados em grid */
+.cert-list { 
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas automáticas */
+    gap: 10px;
+}
+.cert-list li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+.cert-list i { color: var(--secondary); font-size: 0.9rem; min-width: 20px; }
+
+
+.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+.tag, .tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: var(--font-code);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.project-link:hover { color: var(--primary); }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Animação de Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .grid { grid-template-columns: 1fr; }
+    .cert-list { grid-template-columns: 1fr; } /* Em celular fica uma coluna só */
+}
+
+/* --- Navbar Fixa --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(11, 17, 32, 0.85); /* Fundo escuro transparente */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 0;
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: var(--font-code);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* Ajuste para não esconder o título quando clicar no link */
+section { scroll-margin-top: 80px; } 
+
+/* Esconder menu em celulares muito pequenos se necessário */
+@media (max-width: 600px) {
+    .nav-links { display: none; } /* Simples para não quebrar o layout mobile agora */
+    .navbar { justify-content: center; }
+}
