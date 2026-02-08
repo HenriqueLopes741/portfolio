@@ -8,10 +8,6 @@
 
 ---
 
-## 🖼️ Preview
-
-![Preview do Site](./preview.png) 
-*(Adicione uma captura de tela do seu site aqui, ou apague esta linha se não tiver)*
 
 ## 🌐 Demonstração Online
 
