@@ -1,5 +1,5 @@
 /* --- 1. Efeito de Digitação (Typewriter) --- */
-const words = ["Infraestrutura", "Linux", "Cloud Computing", "Python", "Automação"];
+const words = ["Engenharia de Dados", "Apache Airflow", "Python", "Docker", "Dados"];
 let i = 0;
 let timer;
 

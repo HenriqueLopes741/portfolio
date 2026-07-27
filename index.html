@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Portfólio | Henrique Lopes - Infra & Cloud">
-    <meta property="og:description" content="Estudante de Ciência da Computação focado em Infraestrutura, Linux, Python e Automação. Confira meus projetos!">
-    <meta property="og:image" content="https://seusite.com/caminho-da-sua-foto-de-capa.png"> <meta property="og:url" content="https://henriquelopes741.github.io/portfolio"> <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"> ```
+    <meta property="og:title" content="Portfólio | Henrique Lopes - Engenharia de Dados">
+    <meta property="og:description" content="Estudante e estagiário em Engenharia de Dados, com foco em Python, Apache Airflow, Docker e automações para dados.">
+    <meta property="og:image" content="https://seusite.com/caminho-da-sua-foto-de-capa.png">
+    <meta property="og:url" content="https://henriquelopes741.github.io/portfolio">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2626/2626270.png">
 </head>
 <body>
@@ -24,7 +26,7 @@
         <ul class="nav-links">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#certificados">Certificados</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
             <li><a href="#skills">Skills</a></li>
         </ul>
     </div>
@@ -61,16 +63,15 @@
             <h2 class="section-title reveal"><i class="fas fa-user-astronaut"></i> Sobre Mim</h2>
             <div class="card reveal">
                 <p>
-                    Estudante de Ciência da Computação com foco em desenvolvimento web e backend. Possuo
-                    experiência prática com Python (Flask), criação de scripts de automação, APIs REST, JavaScript,
-                    HTML5, CSS3 e versionamento com Git/GitHub. Vivência com Linux e fundamentos de cloud
-                    computing na Oracle Cloud Infrastructure (OCI). Busco oportunidade de estágio para aplicar
-                    conhecimentos técnicos, aprender com o time e evoluir profissionalmente na área de tecnologia
+                    Sou estudante de Ciência da Computação e Análise e Desenvolvimento de Sistemas (ADS), além de estagiário de Engenharia de Dados no CGINF / MGI. Hoje minha rotina envolve Python, Apache Airflow, Docker, PostgreSQL, YAML e automações para apoiar pipelines e integrações de dados em ambientes governamentais.
                 </p>
-                <ul class="tech-list">
-                    <li><i class="fas fa-check-circle"></i> Foco em Infraestrutura, Cloud & Python</li>
-                    <li><i class="fas fa-check-circle"></i> Aprendizado prático (Hands-on)</li>
-                    <li><i class="fas fa-check-circle"></i> Automação de processos, Scripts e APIs</li>
+                <p style="margin-top: 12px;">
+                    Tenho experiência prática com code review, migração de ambientes Airflow 2→3, integração com OpenSearch, criação de CLI e geradores de configuração. Também contribuo para o projeto open-source Ro-DOU, iniciativa que tem sido um dos meus principais diferenciais na área.
+                </p>
+                <ul class="tech-list" style="margin-top: 16px;">
+                    <li><i class="fas fa-check-circle"></i> Engenharia de Dados e automação de processos</li>
+                    <li><i class="fas fa-check-circle"></i> Contribuição open-source e contexto de governança digital</li>
+                    <li><i class="fas fa-check-circle"></i> Interesse em dados, IA local e home lab</li>
                 </ul>
             </div>
         </section>
@@ -78,59 +79,69 @@
         <section id="projetos">
             <h2 class="section-title reveal"><i class="fas fa-code-branch"></i> Projetos</h2>
             <div class="grid">
-                
                 <div class="card project-card reveal">
-                    <h3><i class="fas fa-folder-open"></i> Organizador de Arquivos</h3>
-                    <p>Script Python que monitora e organiza automaticamente a pasta Downloads, separando arquivos por extensão (PDF, Imagens, Vídeos).</p>
+                    <h3><i class="fas fa-newspaper"></i> Ro-DOU</h3>
+                    <p>Contribuição open-source em Apache Airflow para monitorar o Diário Oficial da União, com foco em automação, rastreio e integração de dados governamentais.</p>
                     <div class="tags">
-                        <span>Python</span><span>Automação</span><span>OS</span><span>Scripting</span>
+                        <span>Airflow</span><span>Python</span><span>Docker</span><span>OpenSearch</span>
                     </div>
-                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_projeto-em-python-finalizado-desenvolvi-activity-7425311362387525633-Jkoz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/gestaogovbr/Ro-dou" target="_blank" class="project-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card project-card reveal">
-                    <h3><i class="fas fa-terminal"></i> Bot Automação Git</h3>
-                    <p>Ferramenta CLI em Python para automatizar o fluxo de versionamento (status, add, commit, push) diretamente pelo terminal.</p>
+                    <h3><i class="fas fa-terminal"></i> CLI e Geradores de Configuração</h3>
+                    <p>Criação de ferramentas CLI e geradores para padronizar setups, automatizar fluxos e reduzir esforço manual em ambientes com YAML e Docker.</p>
                     <div class="tags">
-                        <span>Python</span><span>Git</span><span>CLI</span><span>Automação</span>
+                        <span>Python</span><span>CLI</span><span>YAML</span><span>Automação</span>
                     </div>
-                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-git-github-activity-7424119046314323969-2OKz?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/HenriqueLopes741" target="_blank" class="project-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card project-card reveal">
-                    <h3><i class="fas fa-cube"></i> Monitor Minecraft</h3>
-                    <p>Sistema de monitoramento de servidor com API REST (Flask) e interface web exibindo status e jogadores em tempo real.</p>
+                    <h3><i class="fas fa-database"></i> Migração e Observabilidade Airflow</h3>
+                    <p>Atuação em melhorias relacionadas à migração de ambientes Airflow 2→3, integração com OpenSearch e fortalecimento da observabilidade de pipelines.</p>
                     <div class="tags">
-                        <span>Python</span><span>Flask</span><span>Linux</span><span>API REST</span>
+                        <span>Airflow</span><span>OpenSearch</span><span>PostgreSQL</span><span>Docker</span>
                     </div>
-                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_aprendizado-tecnologia-python-activity-7406471404851720192-3UFg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/HenriqueLopes741" target="_blank" class="project-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card project-card reveal">
-                    <h3><i class="fas fa-robot"></i> Visão Computacional</h3>
-                    <p>Controle de hardware via gestos manuais utilizando a câmera, Python (OpenCV) e comunicação serial com Arduino.</p>
+                    <h3><i class="fas fa-chart-line"></i> Automação e análise de dados</h3>
+                    <p>Uso de Python, pandas e SQL para estruturar dados, validar fluxos e apoiar decisões com maior eficiência em projetos de dados.</p>
                     <div class="tags">
-                        <span>OpenCV</span><span>Arduino</span><span>Serial</span><span>Python</span>
+                        <span>Python</span><span>pandas</span><span>SQL</span><span>Dados</span>
                     </div>
-                    <a href="https://www.linkedin.com/posts/henriquelopesdioniziomuniz_python-arduino-opencv-activity-7414492326535892992-yPy7?utm_source=share&utm_medium=member_desktop&rcm=ACoAADM70-sBYVxFuzKR8wqUkW6pcJkJ918GM2o" target="_blank" class="project-link">Ver no LinkedIn <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/HenriqueLopes741" target="_blank" class="project-link">Ver no GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
+            </div>
+        </section>
 
+        <section id="experiencia">
+            <h2 class="section-title reveal"><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+            <div class="card reveal">
+                <h3><i class="fas fa-building"></i> Estagiário de Engenharia de Dados — CGINF / MGI</h3>
+                <p style="margin-top: 10px;">
+                    Atualmente atuo no Ministério da Gestão e Inovação, desenvolvendo soluções em torno de dados, pipelines e automações com foco em ambientes governamentais.
+                </p>
+                <ul class="tech-list" style="margin-top: 12px;">
+                    <li><i class="fas fa-check-circle"></i> Trabalho com Python, Apache Airflow, Docker, PostgreSQL e YAML</li>
+                    <li><i class="fas fa-check-circle"></i> Participação em code review e melhorias contínuas de processos</li>
+                    <li><i class="fas fa-check-circle"></i> Contribuições para migração Airflow 2→3 e integração OpenSearch</li>
+                </ul>
             </div>
         </section>
 
         <section id="certificados">
-            <h2 class="section-title reveal"><i class="fas fa-certificate"></i> Certificações</h2>
+            <h2 class="section-title reveal"><i class="fas fa-certificate"></i> Formação & Certificações</h2>
             <div class="card reveal">
                 <ul class="cert-list">
-                    <li><i class="fas fa-cloud"></i> Oracle Cloud Infrastructure (OCI)</li>
+                    <li><i class="fas fa-graduation-cap"></i> Ciência da Computação e ADS (IESB)</li>
                     <li><i class="fab fa-linux"></i> Fundamentos de Linux e Terminal</li>
                     <li><i class="fab fa-git-alt"></i> Git e GitHub Versionamento</li>
-                    <li><i class="fab fa-docker"></i> Introdução ao Docker</li>
-                    <li><i class="fas fa-shield-alt"></i> Segurança da Informação Básica</li>
-                    <li><i class="fab fa-python"></i> Python para Iniciantes</li>
-                    <li><i class="fas fa-database"></i> Introdução a Banco de Dados (SQL)</li>
-                    <li><i class="fas fa-network-wired"></i> Noções de APIs e HTTP</li>
-                    <li><i class="fas fa-code"></i> Lógica e Algoritmos</li>
+                    <li><i class="fab fa-docker"></i> Docker e ambientes containerizados</li>
+                    <li><i class="fab fa-python"></i> Python para automação e dados</li>
+                    <li><i class="fas fa-database"></i> Bancos de dados e SQL</li>
                 </ul>
             </div>
         </section>
@@ -139,15 +150,17 @@
             <h2 class="section-title reveal"><i class="fas fa-tools"></i> Tecnologias</h2>
             <div class="card reveal">
                 <div class="tags big-tags">
-                    <span>Linux</span>
                     <span>Python</span>
-                    <span>Git</span>
+                    <span>Apache Airflow</span>
                     <span>Docker</span>
+                    <span>PostgreSQL</span>
+                    <span>YAML</span>
+                    <span>pandas</span>
                     <span>SQL</span>
-                    <span>Cloud (OCI)</span>
-                    <span>Flask</span>
-                    <span>Bash Script</span>
-                    <span>OpenCV</span>
+                    <span>OpenSearch</span>
+                    <span>Git/GitHub</span>
+                    <span>HTML/JavaScript</span>
+                    <span>Linux</span>
                 </div>
             </div>
         </section>
