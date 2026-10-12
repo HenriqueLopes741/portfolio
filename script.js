@@ -1,129 +1,89 @@
-/* --- 1. Efeito de Digitação (Typewriter) --- */
-const words = ["Engenharia de Dados", "Apache Airflow", "Python", "Docker", "Dados"];
-let i = 0;
-let timer;
-
-function typeWriter() {
-    const heading = document.getElementById("typing-text");
-    const word = words[i];
-    const current = heading.textContent;
-
-    // Se estiver digitando
-    if (!heading.classList.contains("deleting")) {
-        if (current.length < word.length) {
-            heading.textContent = word.substring(0, current.length + 1);
-            timer = setTimeout(typeWriter, 100); // Velocidade de digitação
-        } else {
-            heading.classList.add("deleting");
-            timer = setTimeout(typeWriter, 2000); // Pausa antes de apagar
-        }
-    } 
-    // Se estiver apagando
-    else {
-        if (current.length > 0) {
-            heading.textContent = word.substring(0, current.length - 1);
-            timer = setTimeout(typeWriter, 50); // Velocidade de apagar
-        } else {
-            heading.classList.remove("deleting");
-            i = (i + 1) % words.length;
-            timer = setTimeout(typeWriter, 500); // Pausa antes de começar o próximo
-        }
-    }
-}
-
-document.addEventListener("DOMContentLoaded", typeWriter);
+/* --- Tema claro/escuro --- */
+const root = document.documentElement;
+document.getElementById("theme-toggle").addEventListener("click", () => {
+    const isDark = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = isDark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+});
 
 
-/* --- 2. Animação ao Rolar (Scroll Reveal) --- */
+/* --- Animação ao rolar --- */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("active");
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
         }
     });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+
+/* --- Filtro de projetos --- */
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+
+filters.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        filters.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+
+        const cat = btn.dataset.filter;
+        projects.forEach((p) => {
+            const match = cat === "all" || p.dataset.cat.split(" ").includes(cat);
+            p.classList.toggle("is-hidden", !match);
+            p.classList.toggle("project-wide", match && cat === "all" && p.dataset.wide !== undefined);
+        });
+    });
 });
+// guarda quem é o card largo para restaurar ao voltar em "Todos"
+document.querySelectorAll(".project-wide").forEach((p) => (p.dataset.wide = ""));
 
-const hiddenElements = document.querySelectorAll(".reveal");
-hiddenElements.forEach((el) => observer.observe(el));
 
+/* --- Repositórios recentes (API pública do GitHub) --- */
+// já exibidos nos cards (ou ocultados de propósito, como o Whoop-extrator)
+const skip = new Set([
+    "Whoop-extrator", "Projeto_Academico_IA_20262", "Projeto_Academico_BD2_2026.2",
+    "gestos-arduino-python", "organizador-arquivo-python", "analisador-temporada-futebol",
+    "HenriqueLopes741",
+]);
 
-/* --- 3. Fundo Animado (Network Effect) --- */
-const canvas = document.getElementById('canvas-bg');
-const ctx = canvas.getContext('2d');
+async function loadRepos() {
+    const list = document.getElementById("repo-list");
+    try {
+        const res = await fetch("https://api.github.com/users/HenriqueLopes741/repos?sort=pushed&per_page=30");
+        if (!res.ok) throw new Error(res.status);
+        const repos = (await res.json())
+            .filter((r) => !skip.has(r.name))
+            .slice(0, 6);
 
-let particlesArray;
+        list.innerHTML = "";
+        repos.forEach((r) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = r.html_url;
+            a.target = "_blank";
+            a.rel = "noopener";
 
-// Ajustar tamanho do canvas
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+            const name = document.createElement("span");
+            name.className = "repo-name";
+            name.textContent = r.name + (r.fork ? " (fork)" : "");
+            const desc = document.createElement("span");
+            desc.className = "repo-desc";
+            desc.textContent = r.description || "";
+            const lang = document.createElement("span");
+            lang.className = "repo-lang";
+            lang.textContent = r.language || "";
 
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    init();
-});
-
-// Classe Partícula
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1; // Tamanho das bolinhas
-        this.speedX = Math.random() * 1 - 0.5; // Velocidade
-        this.speedY = Math.random() * 1 - 0.5;
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Rebater nas bordas
-        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-    }
-    draw() {
-        ctx.fillStyle = '#38bdf8'; // Cor das bolinhas (Azul Sky)
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-
-function init() {
-    particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000; // Densidade
-    for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle());
+            a.append(name, desc, lang);
+            li.append(a);
+            list.append(li);
+        });
+    } catch (e) {
+        list.closest(".more-repos").hidden = true;
     }
 }
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-        connect(i); // Conectar linhas
-    }
-    requestAnimationFrame(animate);
-}
-
-// Conectar partículas próximas com linhas
-function connect(index) {
-    for (let j = index; j < particlesArray.length; j++) {
-        let distance = ((particlesArray[index].x - particlesArray[j].x) ** 2) 
-                     + ((particlesArray[index].y - particlesArray[j].y) ** 2);
-        
-        // Se estiverem perto (distância < 100px)
-        if (distance < (canvas.width/7) * (canvas.height/7)) {
-            let opacityValue = 1 - (distance / 20000);
-            ctx.strokeStyle = 'rgba(56, 189, 248,' + opacityValue + ')';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[index].x, particlesArray[index].y);
-            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-            ctx.stroke();
-        }
-    }
-}
-
-init();
-animate();
+loadRepos();
